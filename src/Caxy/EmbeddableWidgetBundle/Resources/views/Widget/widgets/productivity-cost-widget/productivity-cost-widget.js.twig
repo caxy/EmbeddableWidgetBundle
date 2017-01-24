@@ -1,0 +1,106 @@
+/**
+ * productivity-cost-widget
+ */
+(function(global) {
+    // make a global object to store stuff in
+    if (!global.BestMoneyMovesWidgets) {
+        global.BestMoneyMovesWidgets = {};
+    };
+    var BestMoneyMovesWidgets = global.BestMoneyMovesWidgets;
+
+    // add widget object to global object.
+    if (!BestMoneyMovesWidgets.ProductivityCostWidget) {
+        BestMoneyMovesWidgets.ProductivityCostWidget = {};
+    }
+    var ProductivityCostWidget = BestMoneyMovesWidgets.ProductivityCostWidget;
+
+    // initialize widgets storage object.
+    if (!ProductivityCostWidget.widgets) {
+        ProductivityCostWidget.widgets = {};
+    }
+    var widgets = ProductivityCostWidget.widgets;
+
+    // Set widget ID passed in from controller.
+    var widgetId = '{{ widgetId }}';
+
+    // Check if widget has been initialized already.
+    if (!widgets.hasOwnProperty(widgetId)) {
+        // Create widget and add it to the widgets object.
+        widgets[widgetId] = createWidget();
+        var widget = widgets[widgetId];
+
+    }
+
+    function createWidget () {
+        var widget = {};
+        var widgetElement = document.getElementById(widgetId);
+
+        var formWrapperClass = 'bmm-widget-productivity-cost-form-wrapper';
+        var resultsWrapperClass = 'bmm-widget-productivity-cost-results-wrapper';
+        var numEmployeesInputName = 'bmm_widget_number_of_employees';
+        var resultValueClass = 'bmm-widget-productivity-cost-result-value';
+
+        var formWrapper = widgetElement.querySelector('.'+formWrapperClass);
+        var resultsWrapper = widgetElement.querySelector('.'+resultsWrapperClass);
+
+        var mainFormElement = formWrapper.querySelector('form');
+        var resultsFormElement = resultsWrapper.querySelector('form');
+
+        var formSubmitButton = mainFormElement.querySelector('button[type="submit"]');
+        var recalculateButton = resultsFormElement.querySelector('button[type="submit"]');
+
+        var numEmployeesInput = mainFormElement.querySelector('input[name="'+numEmployeesInputName+'"]');
+        var resultValueElement = resultsWrapper.querySelector('.'+resultValueClass);
+
+        // Register main form submit event.
+        mainFormElement.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Retrieve value from input, validate, do calculation, update output value and display output.
+            var numEmployeesRaw = numEmployeesInput.value;
+
+            if (numEmployeesRaw.trim().length === 0) {
+                // Validation error.
+                console.log('TODO: VALIDATION ERROR');
+                return false;
+            }
+
+            var numEmployees = parseInt(numEmployeesRaw);
+
+            if (numEmployees > 0) {
+                // Calculate and update output.
+                var calculatedLoss = Math.round(numEmployees * 7000);
+                var outputText = '$'+numberWithCommas(calculatedLoss);
+
+                resultValueElement.innerHTML = outputText;
+
+                // Hide form and show output.
+                formWrapper.style.display = 'none';
+                resultsWrapper.style.display = 'block';
+            } else {
+                // Validation error.
+                console.log('TODO: VALIDATION ERROR');
+            }
+
+            // Stop form submission.
+            return false;
+        });
+
+        resultsFormElement.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Show the calculation form again.
+            resultsWrapper.style.display = 'none';
+            formWrapper.style.display = 'block';
+            resultValueElement.innerHTML = '';
+
+            return false;
+        });
+    }
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+})(this);

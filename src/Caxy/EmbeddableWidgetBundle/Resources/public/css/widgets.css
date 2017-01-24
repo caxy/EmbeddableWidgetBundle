@@ -1,0 +1,153 @@
+/**
+ * RESET: Resets all styles for widgets.
+ *
+ * http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain)
+ */
+.bmm-widget div, .bmm-widget span, .bmm-widget applet, .bmm-widget object, .bmm-widget iframe,
+.bmm-widget h1, .bmm-widget h2, .bmm-widget h3, .bmm-widget h4, .bmm-widget h5, .bmm-widget h6, .bmm-widget p, .bmm-widget blockquote, .bmm-widget pre,
+.bmm-widget a, .bmm-widget abbr, .bmm-widget acronym, .bmm-widget address, .bmm-widget big, .bmm-widget cite, .bmm-widget code,
+.bmm-widget del, .bmm-widget dfn, .bmm-widget em, .bmm-widget img, .bmm-widget ins, .bmm-widget kbd, .bmm-widget q, .bmm-widget s, .bmm-widget samp,
+.bmm-widget small, .bmm-widget strike, .bmm-widget strong, .bmm-widget sub, .bmm-widget sup, .bmm-widget tt, .bmm-widget var,
+.bmm-widget b, .bmm-widget u, .bmm-widget i, .bmm-widget center,
+.bmm-widget dl, .bmm-widget dt, .bmm-widget dd, .bmm-widget ol, .bmm-widget ul, .bmm-widget li,
+.bmm-widget fieldset, .bmm-widget form, .bmm-widget label, .bmm-widget legend,
+.bmm-widget table, .bmm-widget caption, .bmm-widget tbody, .bmm-widget tfoot, .bmm-widget thead, .bmm-widget tr, .bmm-widget th, .bmm-widget td,
+.bmm-widget article, .bmm-widget aside, .bmm-widget canvas, .bmm-widget details, .bmm-widget embed,
+.bmm-widget figure, .bmm-widget figcaption, .bmm-widget footer, .bmm-widget header, .bmm-widget hgroup,
+.bmm-widget menu, .bmm-widget nav, .bmm-widget output, .bmm-widget ruby, .bmm-widget section, .bmm-widget summary,
+.bmm-widget time, .bmm-widget mark, .bmm-widget audio, .bmm-widget video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+.bmm-widget article, .bmm-widget aside, .bmm-widget details, .bmm-widget figcaption, .bmm-widget figure,
+.bmm-widget footer, .bmm-widget header, .bmm-widget hgroup, .bmm-widget menu, .bmm-widget nav, .bmm-widget section {
+    display: block;
+}
+.bmm-widget ol, .bmm-widget ul {
+    list-style: none;
+}
+.bmm-widget blockquote, .bmm-widget q {
+    quotes: none;
+}
+.bmm-widget blockquote:before, .bmm-widget blockquote:after,
+.bmm-widget q:before, .bmm-widget q:after {
+    content: '';
+    content: none;
+}
+.bmm-widget table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**
+ * GENERAL: Global widget styles
+ */
+
+/* Typography */
+.bmm-widget { font-family: Oxygen, sans-serif; font-size: 16px; line-height: 1.5; color: rgb(83, 83, 83); background-color: rgb(255, 255, 255); }
+.bmm-widget h1, .bmm-widget h2, .bmm-widget h3, .bmm-widget h4, .bmm-widget h5 {
+    font-family: museo-sans-rounded,serif;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.bmm-widget p { margin: 0 0 12px; }
+.bmm-widget h3 { font-size: 28px; }
+.bmm-widget sub,
+.bmm-widget sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+.bmm-widget sup {
+    top: -.5em
+}
+
+.bmm-widget sub {
+    bottom: -.25em
+}
+
+.bmm-widget small.fine-print { font-size: 0.7em; }
+
+/* Form styles */
+.bmm-widget .form-control, output { display: block; font-size: 16px; line-height: 1.5; color: rgb(85, 85, 85); }
+.bmm-widget .form-control { width: 100%; height: 38px; padding: 6px 12px; background-color: rgb(255, 255, 255); background-image: none; border: 1px solid rgb(204, 204, 204); border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px inset; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+.bmm-widget .form-control:focus { border-color: rgb(102, 175, 233); outline: 0px; box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px inset, rgba(102, 175, 233, 0.6) 0px 0px 8px; }
+.bmm-widget .form-control::-webkit-input-placeholder { color: rgb(153, 153, 153); }
+.bmm-widget .form-group { margin-bottom: 15px; }
+.bmm-widget .form-horizontal .form-group::after, .form-horizontal .form-group::before { content: " "; display: table; }
+.bmm-widget .form-horizontal .form-group::after { clear: both; }
+.bmm-widget .btn { display: inline-block; margin-bottom: 0px; font-weight: 700; text-align: center; vertical-align: middle; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 6px 12px; font-size: 16px; line-height: 1.5; border-radius: 30px; user-select: none; }
+.bmm-widget .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus { outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; }
+.bmm-widget .btn.focus, .btn:focus, .btn:hover { color: rgb(255, 255, 255); text-decoration: none; }
+.bmm-widget .btn.active, .btn:active { outline: 0px; background-image: none; box-shadow: rgba(0, 0, 0, 0.121569) 0px 3px 5px inset; }
+.bmm-widget .btn-default { color: rgb(255, 255, 255); background-color: rgb(83, 83, 83); border-color: rgb(204, 204, 204); }
+.bmm-widget .btn-default.focus, .btn-default:focus { color: rgb(255, 255, 255); background-color: rgb(58, 58, 58); border-color: rgb(140, 140, 140); }
+.bmm-widget .btn-default.active, .btn-default:active, .btn-default:hover, .open > .btn-default.dropdown-toggle { color: rgb(255, 255, 255); background-color: rgb(58, 58, 58); border-color: rgb(173, 173, 173); }
+.bmm-widget .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .btn-default.dropdown-toggle.focus, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle:hover { color: rgb(255, 255, 255); background-color: rgb(40, 40, 40); border-color: rgb(140, 140, 140); }
+.bmm-widget .btn-default.active, .btn-default:active, .open > .btn-default.dropdown-toggle { background-image: none; }
+.bmm-widget .btn-block { display: block; width: 100%; }
+.bmm-widget [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], [data-toggle="buttons"] > .btn-group > .btn input[type="radio"], [data-toggle="buttons"] > .btn input[type="checkbox"], [data-toggle="buttons"] > .btn input[type="radio"] { position: absolute; clip: rect(0px 0px 0px 0px); pointer-events: none; }
+.bmm-widget .btn, button { font-family: museo-sans-rounded, serif; padding-left: 2rem; padding-right: 2rem; border: none; }
+.bmm-widget .btn.btn-default.active:focus, .btn.btn-default:focus, .btn.btn-primary.active:focus, .btn.btn-primary:focus, .btn:focus .btn.active:focus, .btn:focus button.active:focus, button.btn-default.active:focus, button.btn-default:focus, button.btn-primary.active:focus, button.btn-primary:focus, button:focus .btn.active:focus, button:focus button.active:focus { outline: none; }
+.bmm-widget .has-buttons .btn, .has-buttons button { margin-top: 0.2em; margin-bottom: 0.2em; }
+.bmm-widget .has-buttons .btn:first-child, .has-buttons button:first-child { margin-left: 0px; }
+.bmm-widget .has-buttons .btn:last-child, .has-buttons button:last-child { margin-right: 0px; }
+.bmm-widget .form-control { border: none; background: rgb(245, 245, 245); }
+.bmm-widget .button-container { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Alerts */
+.bmm-widget .alert-danger { background-color: rgb(242, 222, 222); border-color: rgb(235, 204, 209); color: rgb(169, 68, 66); }
+
+/* Panels */
+.bmm-widget .bmm-widget-panel { margin-bottom: 24px; background-color: rgb(255, 255, 255); border: 1px solid transparent; border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 1px; }
+.bmm-widget .bmm-widget-panel { margin-bottom: 2.3rem; }
+.bmm-widget .bmm-widget-panel-body { padding: 15px; }
+.bmm-widget .bmm-widget-panel-body::after, .bmm-widget-panel-body::before { content: " "; display: table; }
+.bmm-widget .bmm-widget-panel-body::after { clear: both; }
+.bmm-widget .bmm-widget-panel { border-color: rgb(221, 221, 221); }
+.bmm-widget .bmm-widget-panel-body h1:first-child, .bmm-widget-panel-body h2:first-child, .bmm-widget-panel-body h3:first-child, .bmm-widget-panel-body h4:first-child, .bmm-widget-panel-body h5:first-child { margin-top: 0px; }
+.bmm-widget .bmm-widget-panel .form-group { -webkit-box-align: center; align-items: center; padding-top: 2rem; }
+.bmm-widget .bmm-widget-panel-body { text-align: center; }
+.bmm-widget .bmm-widget-panel-body input[type="text"] { background-color: rgb(245, 245, 245); border: 0px; }
+.bmm-widget .bmm-widget-panel .button-container { padding-top: 1rem; }
+.bmm-widget .bmm-widget-panel .btn.btn-default { background-color: rgb(88, 0, 194); color: rgb(255, 255, 255); }
+.bmm-widget .bmm-widget-panel-body-content { width: 80%; margin-left: auto; margin-right: auto; }
+.bmm-widget .bmm-widget-panel-body-content,
+.bmm-widget .bmm-widget-body-text,
+.bmm-widget .bmm-widget-panel-body-content input,
+.bmm-widget .bmm-widget-panel-body-content .button-container {
+    text-align: center;
+}
+
+/* Logo display */
+.bmm-widget .bmm-widget-logo-container { padding-top: 4rem; }
+.bmm-widget .bmm-widget-logo-container img { width: 350px; margin-bottom: 30px; }
+
+@media (max-width: 500px) {
+    .bmm-widget .bmm-widget-logo-container img { width: 100%; }
+}
+
+/**
+ * WIDGET: Productivity Cost Calculator (productivity-cost-widget)
+ */
+.bmm-widget.bmm-widget-productivity-cost-widget .bmm-widget-panel-body-content { max-width: 600px; }
+
+/* Losses alert */
+.bmm-widget .bmm-widget-productivity-cost-result-value { line-height: 2; font-size: 20px; }
+
+/* Number of employees input */
+.bmm-widget.bmm-widget-productivity-cost-widget input[name="bmm_widget_number_of_employees"] {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
